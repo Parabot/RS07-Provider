@@ -30,8 +30,6 @@ public class Provider extends ServerProvider {
 			Object instance = clientClass.newInstance();
 			Applet applet = (Applet) instance;
 			applet.setStub(new OssStub(parser.getJar(), parser.getParameters()));
-			applet.init();
-			applet.start();
 			return applet;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
