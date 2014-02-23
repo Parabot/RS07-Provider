@@ -24,7 +24,7 @@ public class Provider extends ServerProvider {
 	@Override
 	public Applet fetchApplet() {
 		try {
-			final Context context = Context.resolve();
+			final Context context = Context.getInstance();
 			final ASMClassLoader classLoader = context.getASMClassLoader();
 			final Class<?> clientClass = classLoader.loadClass("client");
 			Object instance = clientClass.newInstance();
